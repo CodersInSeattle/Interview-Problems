@@ -1,0 +1,49 @@
+#!/usr/bin/python
+
+import sys
+import datetime
+class Transaction:
+	def getDate(self, str):
+		return datetime.date(*map(int, str.strip().split('/')))
+	def __init__(self,name,time):
+		self.name = name
+		self.time = self.getDate(time)
+arr = [Transaction("iWatch", "2016/05/01"),
+Transaction("iPhone", "2016/01/08"),
+Transaction("phone case", "2016/01/10"),
+Transaction("laptop", "2016/01/05"),
+Transaction("iPhone", "2016/01/02"),
+Transaction("phone case", "2016/01/05"),
+Transaction("glass", "2016/01/01")
+]
+
+def getList(str,arr):
+	res=[]
+	for item in arr:
+		if item.name==str:
+			res.append(item.time)
+	return res
+	
+#dif = day1 - day2
+#dif.days
+
+def getMin(str1, str2):
+	list1=getList(str1, arr)
+	list2=getList(str2, arr)
+	list1.sort()
+	list2.sort()
+	i,j=0,0
+	res=sys.maxint
+	while i<len(list1) and j<len(list2):
+		res=min(res,abs((list1[i]-list2[j]).days))
+		if list1[i]<list2[j]:
+			i+=1
+		elif list1[i]>list2[j]:
+			j+=1
+		else:
+			i+=1
+			j+=1
+	return res
+	
+print getMin("iPhone", "phone case")
+print getMin("glass", "phone case")

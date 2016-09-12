@@ -4,6 +4,8 @@ from leetcode.math import lc273_integer_to_english_words
 
 
 class TestNumberToWords(object):
+    """ Test the number to words function. """
+
     SOLUTION = lc273_integer_to_english_words.Solution()
 
     def test_zero(self):

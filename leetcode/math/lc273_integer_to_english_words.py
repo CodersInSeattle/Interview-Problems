@@ -9,10 +9,9 @@ For example,
 
 """
 
-import math
-
 
 class Solution(object):
+    """ The mighty solution - silly pylint requires a docstring """
 
     THOUSAND = 1000
     HUNDRED = 100

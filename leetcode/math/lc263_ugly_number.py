@@ -9,6 +9,11 @@ Note that 1 is typically treated as an ugly number.
 
 
 def is_ugly_number(number):
+    """
+    Returns True if the number is an ugly number.
+    :param number: the number
+    :return: True or False
+    """
     if number <= 0:
         return False
     if number == 1:
@@ -25,4 +30,7 @@ def is_ugly_number(number):
 
 
 def dividable_by_primes(number, primes):
+    """
+    Returns True if number is dividable by at least one of numbers in the list of `primes`
+    """
     return any(number % prime == 0 for prime in primes)

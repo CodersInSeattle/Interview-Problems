@@ -1,10 +1,12 @@
-import pytest
 import random
+
+import pytest
 
 from leetcode.math.lc263_ugly_number import is_ugly_number
 
 
 class TestIsUglyNumber(object):
+    """ The mighty test suite to the mighty solution. """
 
     PRIMES = [2, 3, 5]
 
@@ -25,7 +27,7 @@ class TestIsUglyNumber(object):
     def test_multiple_of_primes(self):
         turns = random.randint(0, 20)
         number = 1
-        for i in range(turns):
+        for _ in range(turns):
             number *= random.choice(self.PRIMES)
             assert is_ugly_number(number)
 
@@ -33,6 +35,6 @@ class TestIsUglyNumber(object):
         the_uglies = [7, 11, 13, 17, 29]
         turns = random.randint(0, 20)
         number = random.choice(the_uglies)
-        for i in range(turns):
+        for _ in range(turns):
             number *= random.choice(self.PRIMES)
             assert not is_ugly_number(number)

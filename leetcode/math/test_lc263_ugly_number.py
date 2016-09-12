@@ -1,3 +1,8 @@
+"""
+Test file `lc263_ugly_number.py`
+"""
+# pylint: disable=no-self-use
+
 import random
 
 import pytest

@@ -192,6 +192,9 @@ min-public-methods=0
 # Maximum number of public methods for a class (see R0904).
 max-public-methods=20
 
+# Minimum line length for functions/classes that require docstrings, shorter ones are exempt.
+docstring-min-length=10
+
 
 # checks for
 # * external modules dependencies
@@ -263,7 +266,7 @@ notes=FIXME,XXX,TODO
 [FORMAT]
 
 # Maximum number of characters on a single line.
-max-line-length=90
+max-line-length=120
 
 # Maximum number of lines in a module
 max-module-lines=1000
